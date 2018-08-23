@@ -6,6 +6,8 @@
         "list-queues/list-queues-impl.scm"
         "list-queues/list-queues-test.scm"
         "tests/run.scm"
+        "srfi-117.egg"
+        "srfi-117.scm"
         "srfi-117.setup"
         "srfi-117.meta"
         "srfi-117.release-info"

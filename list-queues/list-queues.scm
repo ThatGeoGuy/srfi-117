@@ -1,6 +1,13 @@
 (module srfi-117 ()
   (import scheme)
-  (import (only chicken include define-record-type case-lambda error))
+  (cond-expand
+    (chicken-5
+     (import (only (chicken base)
+                   include define-record-type case-lambda error)
+             (chicken module)))
+    (else
+     (import (only chicken include define-record-type case-lambda error))))
+
   (export make-list-queue list-queue list-queue-copy list-queue-unfold list-queue-unfold-right)
   (export list-queue? list-queue-empty?)
   (export list-queue-front list-queue-back list-queue-list list-queue-first-last)
